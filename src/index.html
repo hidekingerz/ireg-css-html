@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>複雑なレイアウト - オーバーフローサンプル</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>複雑なレイアウト デモ</h1>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#section1">セクション1</a></li>
+                    <li><a href="#section2">セクション2</a></li>
+                    <li><a href="#section3">セクション3</a></li>
+                    <li><a href="#section4">セクション4</a></li>
+                    <li><a href="#section5">セクション5</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            <aside class="sidebar">
+                <div class="sidebar-content">
+                    <h3>サイドバー</h3>
+                    <div class="sidebar-item overflow-hidden">
+                        <h4>オーバーフロー要素（hidden）</h4>
+                        <p>この要素は非常に長いテキストを含んでいますが、overflow: hiddenによって隠されています。Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    
+                    <div class="sidebar-item overflow-scroll">
+                        <h4>オーバーフロー要素（scroll）</h4>
+                        <p>この要素はスクロールできます。Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+
+                    <div class="sidebar-item overflow-ellipsis">
+                        <h4>テキストオーバーフロー（ellipsis）</h4>
+                        <p>この非常に長いテキストは省略記号で表示されます。Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="content">
+                <div class="card-grid">
+                    <div class="card card-1">
+                        <div class="card-header">
+                            <h3>フレックスボックスカード</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>これはフレックスボックスレイアウトを使用したカードです。</p>
+                            <div class="flex-container">
+                                <div class="flex-item">アイテム1</div>
+                                <div class="flex-item">アイテム2</div>
+                                <div class="flex-item overflow-item">非常に長いテキストのアイテム3</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-2">
+                        <div class="card-header">
+                            <h3>グリッドレイアウト</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="grid-container">
+                                <div class="grid-item grid-item-1">1</div>
+                                <div class="grid-item grid-item-2">2</div>
+                                <div class="grid-item grid-item-3">3</div>
+                                <div class="grid-item grid-item-4">4</div>
+                                <div class="grid-item grid-item-5 overflow-content">
+                                    非常に長いコンテンツがここに配置されています。このテキストはグリッドアイテムの境界を超える可能性があります。
+                                </div>
+                                <div class="grid-item grid-item-6">6</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-3">
+                        <div class="card-header">
+                            <h3>ポジション要素</h3>
+                        </div>
+                        <div class="card-content position-container">
+                            <div class="positioned-element absolute-element">
+                                Absolute
+                            </div>
+                            <div class="positioned-element relative-element">
+                                Relative
+                            </div>
+                            <div class="positioned-element fixed-element">
+                                Fixed
+                            </div>
+                            <div class="positioned-element sticky-element">
+                                Sticky Element - スクロールしてみてください
+                            </div>
+                            <p>これは通常のコンテンツです。ポジション要素との相互作用を確認できます。</p>
+                        </div>
+                    </div>
+
+                    <div class="card card-4">
+                        <div class="card-header">
+                            <h3>オーバーフローパターン</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="overflow-demo">
+                                <div class="overflow-visible">
+                                    <h4>Visible</h4>
+                                    <div class="overflow-content-box">
+                                        この要素はoverflow: visibleで、境界を超えて表示されます。
+                                    </div>
+                                </div>
+                                
+                                <div class="overflow-auto">
+                                    <h4>Auto</h4>
+                                    <div class="overflow-content-box">
+                                        この要素はoverflow: autoで、必要に応じてスクロールバーが表示されます。Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="complex-layout">
+                    <div class="floating-elements">
+                        <div class="float-left">左フロート</div>
+                        <div class="float-right">右フロート</div>
+                        <p class="clearfix-text">このテキストはフロート要素の周りを回り込みます。CSSのfloatプロパティとclearfixの動作を確認できます。Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+
+                <div class="table-layout">
+                    <h3>テーブルレイアウト</h3>
+                    <div class="table-container">
+                        <table class="responsive-table">
+                            <thead>
+                                <tr>
+                                    <th>項目</th>
+                                    <th>説明</th>
+                                    <th>値</th>
+                                    <th>ステータス</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>オーバーフロー</td>
+                                    <td>非常に長い説明文がここに入ります。この説明文はテーブルセルの幅を超える可能性があります。</td>
+                                    <td>100</td>
+                                    <td class="status-active">アクティブ</td>
+                                </tr>
+                                <tr>
+                                    <td>レスポンシブ</td>
+                                    <td>レスポンシブデザインの実装</td>
+                                    <td>85</td>
+                                    <td class="status-pending">保留中</td>
+                                </tr>
+                                <tr>
+                                    <td>アニメーション</td>
+                                    <td>CSS アニメーションとトランジション</td>
+                                    <td>95</td>
+                                    <td class="status-completed">完了</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 複雑なレイアウト デモ</p>
+        </footer>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>モーダルダイアログ</h3>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-content">
+                <p>これはモーダルダイアログです。オーバーレイとz-indexの動作を確認できます。</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function closeModal() {
+            document.getElementById('modalOverlay').style.display = 'none';
+        }
+        
+        // デモ用のモーダル表示
+        setTimeout(() => {
+            document.getElementById('modalOverlay').style.display = 'flex';
+        }, 2000);
+    </script>
+</body>
+</html>
